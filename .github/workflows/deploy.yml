@@ -58,7 +58,7 @@ jobs:
       - name: Deploy site
         uses: ./.github/actions/deploy-s3-javascript
         with:
-          bucket: deployw-website-113 
+          bucket-name: deployw-website-113 
           dist-folder: ./dist
   information:
     runs-on: ubuntu-latest
