@@ -13,7 +13,9 @@ const run = () => {
     // Use input to call AWS api to upload to bucket
     exec.exec(`aws s3 sync ${sourceFolder} s3://${bucketName} --region ${region}`)
 
-    core.notice('Hello from my custom Javascript action')
+    const websiteURL = `http://${bucketName}.s3-website-${region}.amazonaws.com`
+    core.setOutput('website-url', websiteURL)
+
 }
 
 run()
